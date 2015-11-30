@@ -13,7 +13,7 @@
     - socat-install
     - socat-install-dependencies
 
-- name: remove (apt version)
+- name: remove (distro version)
   apt:
     name: socat
     state: absent
