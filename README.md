@@ -14,7 +14,7 @@ Set up (the latest version of) [socat](http://www.dest-unreach.org/socat/) in De
 #### Variables
 
 * `socat_version`: [default: `1.7.3.0`]: Version to install
-* `socat_remove_distro_version`: [default: `true`]: Whether or not remove the distribution version
+* `socat_remove_distro_version`: [default: `true`]: Whether or not to remove the distribution version
 * `socat_configure_options`: [default: `[]`]: Options to pass to `./configure`
 
 ## Dependencies
