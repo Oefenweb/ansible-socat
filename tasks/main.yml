@@ -23,7 +23,7 @@
     - configuration
     - socat
     - socat-remove
-    - socat-remove-apt
+    - socat-remove-distro
 
 - name: create (download) directory
   file:
