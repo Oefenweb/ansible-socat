@@ -6,7 +6,7 @@
     state: latest
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items: socat_dependencies
+  with_items: "{{ socat_dependencies }}"
   tags:
     - configuration
     - socat
@@ -79,7 +79,7 @@
     - socat-install-build
 
 - name: configure
-  command: "./configure {{ socat_configure_options | join(' ') }}"
+  command: ./configure {{ socat_configure_options | join(' ') }}
   args:
     chdir: "{{ socat_build_path }}/socat-{{ socat_version }}"
   when: result | changed
@@ -91,7 +91,7 @@
     - socat-install-build-configure
 
 - name: make
-  command: "make"
+  command: make
   args:
     chdir: "{{ socat_build_path }}/socat-{{ socat_version }}"
   when: result | changed
@@ -103,7 +103,7 @@
     - socat-install-build-make
 
 - name: make install
-  command: "make install"
+  command: make install
   args:
     chdir: "{{ socat_build_path }}/socat-{{ socat_version }}"
   when: result | changed
