@@ -15,7 +15,7 @@ Set up (the latest version of) [socat](http://www.dest-unreach.org/socat/) in De
 
 * `socat_version`: [default: `1.7.3.1`]: Version to install
 * `socat_remove_distro_version`: [default: `true`]: Whether or not to remove the distribution version
-* `socat_configure_options`: [default: `[]`]: Options to pass to `./configure` (e.g. ['--disable-readline'])
+* `socat_configure_options`: [default: `[]`]: Options to pass to `./configure` (e.g. `['--disable-readline']`)
 
 ## Dependencies
 
