@@ -1,6 +1,7 @@
 # meta file for socat
 ---
 galaxy_info:
+  role_name: socat
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up (the latest version of) socat in Debian-like systems
