@@ -6,7 +6,7 @@ name: CI
     branches:
       - master
   schedule:
-    - cron: '@weekly'
+    - cron: '30 1 * * 3'
 
 defaults:
   run:
@@ -44,7 +44,6 @@ jobs:
     strategy:
       matrix:
         distro:
-          - debian8
           - debian8
           - debian9
           - debian10
