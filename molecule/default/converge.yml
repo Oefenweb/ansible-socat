@@ -4,4 +4,4 @@
   become: true
 
   roles:
-    - role: "${{ github.repository }}"
+    - role: oefenweb.socat

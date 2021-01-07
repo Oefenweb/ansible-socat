@@ -10,7 +10,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: 'Oefenweb/ansible-socat'
+    working-directory: 'oefenweb.socat'
 
 jobs:
 
@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Check out the codebase
         uses: actions/checkout@v2
+        with:
+          path: 'oefenweb.socat'
 
       - name: Set up Python 3
         uses: actions/setup-python@v2
@@ -52,6 +54,8 @@ jobs:
     steps:
       - name: Check out the codebase
         uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
 
       - name: Run Molecule tests
         uses: robertdebock/molecule-action@2.6.8
