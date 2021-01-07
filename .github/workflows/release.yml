@@ -7,7 +7,7 @@ name: Release
 
 defaults:
   run:
-    working-directory: "${{ github.repository }}"
+    working-directory: 'Oefenweb/ansible-socat'
 
 jobs:
 
@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Check out the codebase
         uses: actions/checkout@v2
-        with:
-          path: "${{ github.repository }}"
 
       - name: Publish to Galaxy
         uses: robertdebock/galaxy-action@1.1.0
