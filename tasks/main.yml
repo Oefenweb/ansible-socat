@@ -115,3 +115,15 @@
     - socat-install
     - socat-install-build
     - socat-install-build-make-install
+
+- name: verify
+  command: >
+    socat -V
+  register: _verify_version
+  failed_when: "socat_version not in _verify_version.stdout"
+  changed_when: false
+  tags:
+    - configuration
+    - socat
+    - socat-install
+    - socat-install-verify
