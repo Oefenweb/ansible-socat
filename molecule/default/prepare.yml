@@ -2,7 +2,6 @@
 - name: Prepare
   hosts: all
   become: true
-
   tasks:
     - name: Update apt cache
       apt:
