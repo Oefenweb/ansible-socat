@@ -5,10 +5,6 @@ name: Release
     tags:
       - '*'
 
-defaults:
-  run:
-    working-directory: 'oefenweb.socat'
-
 jobs:
 
   release:
@@ -17,8 +13,6 @@ jobs:
     steps:
       - name: Check out the codebase
         uses: actions/checkout@v2
-        with:
-          path: 'oefenweb.socat'
 
       - name: Publish to Galaxy
         uses: robertdebock/galaxy-action@1.1.0
