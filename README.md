@@ -1,6 +1,6 @@
 ## socat
 
-![CI](https://github.com/Oefenweb/ansible-socat/workflows/CI/badge.svg)
+[![CI](https://github.com/Oefenweb/ansible-socat/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-socat/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-socat-blue.svg)](https://galaxy.ansible.com/Oefenweb/socat)
 
 Set up (the latest version of) [socat](http://www.dest-unreach.org/socat/) in Debian-like systems.
