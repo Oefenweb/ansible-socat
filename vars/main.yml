@@ -1,4 +1,4 @@
-# vars file for socat
+# vars file
 ---
 socat_dependencies:
   - build-essential

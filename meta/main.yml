@@ -1,6 +1,7 @@
-# meta file for socat
+# meta file
 ---
 galaxy_info:
+  namespace: oefenweb
   role_name: socat
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.

@@ -1,4 +1,4 @@
-# defaults file for socat
+# defaults file
 ---
 socat_version: 1.7.4.0
 socat_remove_distro_version: true
