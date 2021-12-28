@@ -1,5 +1,5 @@
 # defaults file
 ---
-socat_version: 1.7.4.0
+socat_version: 1.7.4.2
 socat_remove_distro_version: true
 socat_configure_options: []
