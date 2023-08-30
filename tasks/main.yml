@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install dependencies
-  apt:
+  ansible.builtin.apt:
     name: "{{ socat_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -13,7 +13,7 @@
     - socat-install-dependencies
 
 - name: remove (distro version)
-  apt:
+  ansible.builtin.apt:
     name: socat
     state: absent
     purge: true
@@ -25,7 +25,7 @@
     - socat-remove-distro
 
 - name: create (download) directory
-  file:
+  ansible.builtin.file:
     path: "{{ socat_download_path }}"
     state: directory
     owner: root
@@ -38,7 +38,7 @@
     - socat-install-download
 
 - name: download (latest)
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ socat_download_url }}"
     dest: "{{ socat_download_path }}/{{ socat_download_url | basename }}"
     owner: root
@@ -52,7 +52,7 @@
     - socat-install-download
 
 - name: create (build) directory
-  file:
+  ansible.builtin.file:
     path: "{{ socat_build_path }}"
     state: directory
     owner: root
@@ -65,7 +65,7 @@
     - socat-install-build
 
 - name: extract
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ socat_download_path }}/{{ socat_download_url | basename }}"
     dest: "{{ socat_build_path }}"
     creates: "{{ socat_build_path }}/socat-{{ socat_version }}"
@@ -78,7 +78,7 @@
     - socat-install-build
 
 - name: configure
-  command: >
+  ansible.builtin.command: >
     ./configure {{ socat_configure_options | join(' ') }}
   args:
     chdir: "{{ socat_build_path }}/socat-{{ socat_version }}"
@@ -91,7 +91,7 @@
     - socat-install-build-configure
 
 - name: make
-  command: >
+  ansible.builtin.command: >
     make
   args:
     chdir: "{{ socat_build_path }}/socat-{{ socat_version }}"
@@ -104,7 +104,7 @@
     - socat-install-build-make
 
 - name: make install
-  command: >
+  ansible.builtin.command: >
     make install
   args:
     chdir: "{{ socat_build_path }}/socat-{{ socat_version }}"
@@ -117,7 +117,7 @@
     - socat-install-build-make-install
 
 - name: verify
-  command: >
+  ansible.builtin.command: >
     socat -V
   register: _verify_version
   failed_when: "socat_version not in _verify_version.stdout"
