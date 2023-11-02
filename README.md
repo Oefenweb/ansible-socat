@@ -28,7 +28,7 @@ None
 ---
 - hosts: all
   roles:
-    - socat
+    - oefenweb.socat
 ```
 
 #### License
